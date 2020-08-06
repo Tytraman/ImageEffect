@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane style="-fx-background-color: #505050;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.tytraman.imageeffect.Controller">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar style="-fx-background-color: #555555;">
+              <menus>
+                <Menu fx:id="filesMenu" mnemonicParsing="false" text="Fichier">
+                  <items>
+                    <MenuItem fx:id="openFileButton" mnemonicParsing="false" onAction="#openFile" text="Ouvrir un fichier..." />
+                        <MenuItem fx:id="openFolderButton" mnemonicParsing="false" onAction="#openFolder" text="Ouvrir un dossier..." />
+                  </items>
+                </Menu>
+                <Menu fx:id="transformMenu" disable="true" mnemonicParsing="false" text="Transformer">
+                  <items>
+                    <MenuItem fx:id="blackAndWhiteButton" mnemonicParsing="false" onAction="#setBlackAndWhite" text="Noir et blanc" />
+                        <MenuItem fx:id="grayButton" mnemonicParsing="false" onAction="#setGray" text="Niveau de gris" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Autres">
+                    <items>
+                      <MenuItem fx:id="menuVersion" mnemonicParsing="false" text="Version 1.0" />
+                        <MenuItem fx:id="githubButton" mnemonicParsing="false" text="Lien GitHub" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="leftImage" fitHeight="380.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="rightImage" fitHeight="380.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <ToolBar style="-fx-background-color: #555555;">
+               <items>
+                  <Label fx:id="toolLabel" text="Aucun fichier sélectionné..." />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
